@@ -1,0 +1,170 @@
+
+##########################
+# Project Input and Output
+##########################
+
+# Exclude _data folder
+/_data/*
+
+# Exclude _output directory
+/_output/*
+config.toml
+
+# Secrets saved in environment files
+.env*
+# Allow example environment file
+!.env.example*
+
+# Other
+temp*.csv
+*/_build/
+
+# venv virtual environment folder
+/venv/*
+/.venv/*
+
+# Sphinx build files
+_docs/
+
+#########################
+# Exclude Compiled Files
+#########################
+bin/
+*.pyc
+*.exe
+bin/
+a.out
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# Distribution / packaging
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.cache
+nosetests.xml
+coverage.xml
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+
+# Sphinx documentation
+docs/
+/docs_src/apidocs
+
+# PyBuilder
+target/
+
+# emacs
+*~
+# C extensions
+*.so
+
+##############
+# LaTex Files
+##############
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.nav
+*.pdfsync
+*.synctex.gz
+*.bak
+*.snm
+*.toc
+*.tdo
+*.run.xml
+*.loe
+
+##########
+# R Files
+##########
+.Rproj.user
+.Rhistory
+.RData
+.Rapp.history
+
+################
+# Database Files
+################
+*.hdf5
+*.npz
+
+###################################
+# Exclude Output From Scripted Jobs
+###################################
+*.o*
+
+####################################
+# Exclude Sublime Text project files
+####################################
+*.sublime*
+
+####################################
+# Exclude Mac OSX system files
+####################################
+.DS_Store
+
+####################################
+# IPython/Jupyter Checkpoints
+####################################
+.ipynb_checkpoints
+.ipynb_checkpoints/
+
+####################################
+# Vagrant
+####################################
+.vagrant/
+
+########
+# MISC.
+########
+*.dat
+*.dir
+*.graphml
+*.gz
+*.ini
+*.vrb
+*.xdv
+\.pytest_cache/
+~$*
+
+.doit.db.db
+.doit-db.sqlite
+
+*Thumbs.db

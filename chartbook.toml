@@ -1,0 +1,143 @@
+[config]
+type = "pipeline"
+chartbook_format_version = "0.0.2"
+
+[site]
+title = "Ken French Data Library"
+author = "Jeremy Bejarano"
+copyright = "2025"
+logo_path = ""
+favicon_path = ""
+
+[pipeline]
+id = "ken_french_data_library"
+pipeline_name = "Ken French Data Library"
+pipeline_description = "Fama-French 25 Portfolios sorted by Size and various characteristics"
+lead_pipeline_developer = "Jeremiah Bejarano"
+contributors = ["Jeremiah Bejarano"]
+runs_on = "Windows/Linux/MacOS"
+git_repo_URL = "https://github.com/ftsfr/ken_french_data_library"
+README_file_path = "./README.md"
+
+[notebooks]
+
+[notebooks.summary_ken_french_ipynb]
+notebook_name = "summary_ken_french_ipynb"
+notebook_description = "Summary statistics and visualization of Fama-French portfolio data"
+notebook_path = "_output/_notebook_build/summary_ken_french_ipynb.ipynb"
+is_publishable = true
+
+[charts]
+
+[dataframes]
+
+[dataframes.ftsfr_french_portfolios_25_daily_size_and_bm]
+dataframe_name = "ftsfr_french_portfolios_25_daily_size_and_bm"
+short_description_df = "Daily Fama-French 25 portfolios sorted by Size and Book-to-Market"
+data_sources = ["ken_french"]
+data_providers = ["Ken French"]
+need_to_contact_provider = ["no"]
+data_on_pre_approved_list = ["No"]
+links_to_data_providers = ["https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html"]
+topic_tags = ["portfolios", "equity", "factors"]
+type_of_data_access = ["Public"]
+data_license = "Public"
+license_expiration_date = ""
+provider_contact_info = ""
+restriction_on_use = "No"
+how_is_pulled = "Downloaded from Ken French Data Library"
+path_to_parquet_data = "./_data/ftsfr_french_portfolios_25_daily_size_and_bm.parquet"
+path_to_excel_data = ""
+date_col = "ds"
+dataframe_docs_str = """
+## Daily Fama-French 25 Portfolios (Size x Book-to-Market)
+
+This dataset contains daily returns for 25 portfolios formed on size and book-to-market.
+
+### Columns
+
+| Column | Description |
+|--------|-------------|
+| unique_id | Portfolio identifier (e.g., "SMALL LoBM", "BIG HiBM") |
+| ds | Date |
+| y | Daily return (decimal) |
+
+### Portfolio Construction
+
+Portfolios are formed on Size (market equity) and Book-to-Market (book equity / market equity).
+5x5 = 25 portfolios at the intersection of 5 size quintiles and 5 B/M quintiles.
+"""
+
+[dataframes.ftsfr_french_portfolios_25_daily_size_and_op]
+dataframe_name = "ftsfr_french_portfolios_25_daily_size_and_op"
+short_description_df = "Daily Fama-French 25 portfolios sorted by Size and Operating Profitability"
+data_sources = ["ken_french"]
+data_providers = ["Ken French"]
+need_to_contact_provider = ["no"]
+data_on_pre_approved_list = ["No"]
+links_to_data_providers = ["https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html"]
+topic_tags = ["portfolios", "equity", "factors"]
+type_of_data_access = ["Public"]
+data_license = "Public"
+license_expiration_date = ""
+provider_contact_info = ""
+restriction_on_use = "No"
+how_is_pulled = "Downloaded from Ken French Data Library"
+path_to_parquet_data = "./_data/ftsfr_french_portfolios_25_daily_size_and_op.parquet"
+path_to_excel_data = ""
+date_col = "ds"
+dataframe_docs_str = """
+## Daily Fama-French 25 Portfolios (Size x Operating Profitability)
+
+This dataset contains daily returns for 25 portfolios formed on size and operating profitability.
+
+### Columns
+
+| Column | Description |
+|--------|-------------|
+| unique_id | Portfolio identifier |
+| ds | Date |
+| y | Daily return (decimal) |
+
+### Portfolio Construction
+
+Portfolios are formed on Size (market equity) and Operating Profitability.
+5x5 = 25 portfolios at the intersection of 5 size quintiles and 5 OP quintiles.
+"""
+
+[dataframes.ftsfr_french_portfolios_25_daily_size_and_inv]
+dataframe_name = "ftsfr_french_portfolios_25_daily_size_and_inv"
+short_description_df = "Daily Fama-French 25 portfolios sorted by Size and Investment"
+data_sources = ["ken_french"]
+data_providers = ["Ken French"]
+need_to_contact_provider = ["no"]
+data_on_pre_approved_list = ["No"]
+links_to_data_providers = ["https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html"]
+topic_tags = ["portfolios", "equity", "factors"]
+type_of_data_access = ["Public"]
+data_license = "Public"
+license_expiration_date = ""
+provider_contact_info = ""
+restriction_on_use = "No"
+how_is_pulled = "Downloaded from Ken French Data Library"
+path_to_parquet_data = "./_data/ftsfr_french_portfolios_25_daily_size_and_inv.parquet"
+path_to_excel_data = ""
+date_col = "ds"
+dataframe_docs_str = """
+## Daily Fama-French 25 Portfolios (Size x Investment)
+
+This dataset contains daily returns for 25 portfolios formed on size and investment.
+
+### Columns
+
+| Column | Description |
+|--------|-------------|
+| unique_id | Portfolio identifier |
+| ds | Date |
+| y | Daily return (decimal) |
+
+### Portfolio Construction
+
+Portfolios are formed on Size (market equity) and Investment (asset growth).
+5x5 = 25 portfolios at the intersection of 5 size quintiles and 5 investment quintiles.
+"""
