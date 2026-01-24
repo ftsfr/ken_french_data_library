@@ -1,0 +1,22 @@
+# Paper References for Ken French Data Library Module
+
+[Fama1993]
+title = "Common risk factors in the returns on stocks and bonds"
+authors = "Eugene F. Fama and Kenneth R. French"
+year = 1993
+journal = "Journal of Financial Economics"
+volume = "33"
+pages = "3-56"
+description = "The paper identifies five common risk factors that influence the returns on stocks and bonds: an overall market factor, firm size, book-to-market equity, and two bond-market factors related to maturity and default risks."
+empirical_facts = [
+    "The study identifies three stock-market factors: an overall market factor, firm size, and book-to-market equity.",
+    "Two bond-market factors are identified, related to maturity and default risks.",
+    "The five factors collectively explain the average returns on stocks and bonds.",
+    "Bond-market factors capture common variation in bond returns, except for low-grade corporates.",
+]
+lessons_learned = [
+    "Traditional asset-pricing models may not fully capture the cross-section of average returns on stocks.",
+    "Empirically determined variables like size and book-to-market equity have significant explanatory power for average returns.",
+    "Understanding common risk factors can improve the explanation of stock and bond return variations.",
+]
+data_url = "https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html"

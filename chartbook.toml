@@ -24,10 +24,32 @@ README_file_path = "./README.md"
 [notebooks.summary_ken_french_ipynb]
 notebook_name = "summary_ken_french_ipynb"
 notebook_description = "Summary statistics and visualization of Fama-French portfolio data"
-notebook_path = "_output/_notebook_build/summary_ken_french_ipynb.ipynb"
+notebook_path = "_output/summary_ken_french_ipynb.ipynb"
 is_publishable = true
 
 [charts]
+
+[charts.french_portfolios_replication]
+chart_name = "Fama-French 25 Portfolios"
+short_description_chart = "Daily returns for Fama-French 25 portfolios sorted by Size and Book-to-Market"
+dataframe_id = "ftsfr_french_portfolios_25_daily_size_and_bm"
+path_to_html_chart = "./_output/french_portfolios_replication.html"
+path_to_excel_chart = ""
+topic_tags = ["portfolios", "equity", "factors", "fama-french", "replication"]
+past_publications = ["Fama and French (1993) - Common risk factors in the returns on stocks and bonds"]
+chart_docs_str = """
+## Fama-French 25 Portfolios
+
+Daily returns for 25 portfolios sorted by Size and Book-to-Market.
+
+### Portfolio Construction
+
+5x5 = 25 portfolios at intersection of size and B/M quintiles
+
+### Data Source
+
+Ken French Data Library
+"""
 
 [dataframes]
 

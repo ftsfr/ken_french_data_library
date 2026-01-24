@@ -38,3 +38,19 @@ The portfolios are formed on the intersection of:
 - **Characteristic**: Book-to-Market, Operating Profitability, or Investment (5 quintiles)
 
 This creates 5x5 = 25 portfolios for each characteristic combination.
+
+## Academic References
+
+### Primary Papers
+
+- **Fama and French (1992)** - "The cross-section of expected stock returns"
+  - The Journal of Finance 47.2 (1992): 427-465
+
+- **Fama and French (1993)** - "Common risk factors in the returns on stocks and bonds"
+  - Journal of Financial Economics 33 (1993): 3-56
+  - Foundational work on size and value factors
+
+### Key Findings
+
+- Size (SMB) and value (HML) factors capture significant cross-sectional variation in stock returns
+- The 25 portfolios provide test assets for evaluating asset pricing models
