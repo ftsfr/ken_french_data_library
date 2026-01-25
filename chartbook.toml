@@ -51,6 +51,28 @@ Daily returns for 25 portfolios sorted by Size and Book-to-Market.
 Ken French Data Library
 """
 
+[charts.french_portfolios_cumulative_returns]
+chart_name = "Fama-French 25 Portfolios Cumulative Returns"
+short_description_chart = "Cumulative returns showing growth of $1 invested in Fama-French portfolios"
+dataframe_id = "ftsfr_french_portfolios_25_daily_size_and_bm"
+path_to_html_chart = "./_output/french_portfolios_cumulative_returns.html"
+path_to_excel_chart = ""
+topic_tags = ["portfolios", "equity", "factors", "fama-french", "cumulative returns"]
+past_publications = ["Fama and French (1993) - Common risk factors in the returns on stocks and bonds"]
+chart_docs_str = """
+## Fama-French 25 Portfolios Cumulative Returns
+
+Cumulative returns showing growth of $1 invested in Fama-French 25 portfolios sorted by Size and Book-to-Market.
+
+### Portfolio Construction
+
+5x5 = 25 portfolios at intersection of size and B/M quintiles
+
+### Calculation
+
+Cumulative return = Product of (1 + daily return) over time
+"""
+
 [dataframes]
 
 [dataframes.ftsfr_french_portfolios_25_daily_size_and_bm]

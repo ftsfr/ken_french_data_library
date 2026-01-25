@@ -153,11 +153,34 @@ def task_run_notebooks():
 # fmt: on
 
 
+def task_generate_charts():
+    """Generate interactive HTML charts."""
+    return {
+        "actions": ["python src/generate_chart.py"],
+        "file_dep": [
+            "src/generate_chart.py",
+            DATA_DIR / "ftsfr_french_portfolios_25_daily_size_and_bm.parquet",
+        ],
+        "targets": [
+            OUTPUT_DIR / "french_portfolios_replication.html",
+            OUTPUT_DIR / "french_portfolios_cumulative_returns.html",
+        ],
+        "verbosity": 2,
+        "task_dep": ["format"],
+    }
+
+
 def task_generate_pipeline_site():
     return {
         "actions": [
             "chartbook build -f",
         ],
         "targets": ["docs/index.html"],
-        "file_dep": ["chartbook.toml", *notebook_files],
+        "file_dep": [
+            "chartbook.toml",
+            *notebook_files,
+            OUTPUT_DIR / "french_portfolios_replication.html",
+            OUTPUT_DIR / "french_portfolios_cumulative_returns.html",
+        ],
+        "task_dep": ["run_notebooks", "generate_charts"],
     }
