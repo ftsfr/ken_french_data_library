@@ -1,99 +1,55 @@
-[config]
-type = "pipeline"
-chartbook_format_version = "0.0.2"
-
-[site]
-title = "Ken French Data Library"
-author = "Jeremy Bejarano"
+[project]
+name = "Ken French Data Library"
+description = "Fama-French 25 Portfolios sorted by Size and various characteristics"
+contributors = [
+    "Jeremiah Bejarano",
+]
+repo_url = "https://github.com/ftsfr/ken_french_data_library"
 copyright = "2025"
-logo_path = ""
-favicon_path = ""
-
-[pipeline]
-id = "ken_french_data_library"
-pipeline_name = "Ken French Data Library"
-pipeline_description = "Fama-French 25 Portfolios sorted by Size and various characteristics"
-lead_pipeline_developer = "Jeremiah Bejarano"
-contributors = ["Jeremiah Bejarano"]
-runs_on = "Windows/Linux/MacOS"
-git_repo_URL = "https://github.com/ftsfr/ken_french_data_library"
-README_file_path = "./README.md"
-
-[notebooks]
+os_compatibility = [
+    "Windows",
+    "Linux",
+    "MacOS",
+]
 
 [notebooks.summary_ken_french_ipynb]
-notebook_name = "summary_ken_french_ipynb"
-notebook_description = "Summary statistics and visualization of Fama-French portfolio data"
-notebook_path = "_output/summary_ken_french_ipynb.ipynb"
-is_publishable = true
-
-[charts]
-
-[charts.french_portfolios_replication]
-chart_name = "Fama-French 25 Portfolios"
-short_description_chart = "Daily returns for Fama-French 25 portfolios sorted by Size and Book-to-Market"
-dataframe_id = "ftsfr_french_portfolios_25_daily_size_and_bm"
-path_to_html_chart = "./_output/french_portfolios_replication.html"
-path_to_excel_chart = ""
-topic_tags = ["portfolios", "equity", "factors", "fama-french", "replication"]
-past_publications = ["Fama and French (1993) - Common risk factors in the returns on stocks and bonds"]
-chart_docs_str = """
-## Fama-French 25 Portfolios
-
-Daily returns for 25 portfolios sorted by Size and Book-to-Market.
-
-### Portfolio Construction
-
-5x5 = 25 portfolios at intersection of size and B/M quintiles
-
-### Data Source
-
-Ken French Data Library
-"""
-
-[charts.french_portfolios_cumulative_returns]
-chart_name = "Fama-French 25 Portfolios Cumulative Returns"
-short_description_chart = "Cumulative returns showing growth of $1 invested in Fama-French portfolios"
-dataframe_id = "ftsfr_french_portfolios_25_daily_size_and_bm"
-path_to_html_chart = "./_output/french_portfolios_cumulative_returns.html"
-path_to_excel_chart = ""
-topic_tags = ["portfolios", "equity", "factors", "fama-french", "cumulative returns"]
-past_publications = ["Fama and French (1993) - Common risk factors in the returns on stocks and bonds"]
-chart_docs_str = """
-## Fama-French 25 Portfolios Cumulative Returns
-
-Cumulative returns showing growth of $1 invested in Fama-French 25 portfolios sorted by Size and Book-to-Market.
-
-### Portfolio Construction
-
-5x5 = 25 portfolios at intersection of size and B/M quintiles
-
-### Calculation
-
-Cumulative return = Product of (1 + daily return) over time
-"""
-
-[dataframes]
+name = "summary_ken_french_ipynb"
+description = "Summary statistics and visualization of Fama-French portfolio data"
+path = "_output/summary_ken_french_ipynb.ipynb"
+publishable = true
 
 [dataframes.ftsfr_french_portfolios_25_daily_size_and_bm]
-dataframe_name = "ftsfr_french_portfolios_25_daily_size_and_bm"
-short_description_df = "Daily Fama-French 25 portfolios sorted by Size and Book-to-Market"
-data_sources = ["ken_french"]
-data_providers = ["Ken French"]
-need_to_contact_provider = ["no"]
-data_on_pre_approved_list = ["No"]
-links_to_data_providers = ["https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html"]
-topic_tags = ["portfolios", "equity", "factors"]
-type_of_data_access = ["Public"]
-data_license = "Public"
-license_expiration_date = ""
-provider_contact_info = ""
-restriction_on_use = "No"
-how_is_pulled = "Downloaded from Ken French Data Library"
-path_to_parquet_data = "./_data/ftsfr_french_portfolios_25_daily_size_and_bm.parquet"
-path_to_excel_data = ""
+name = "ftsfr_french_portfolios_25_daily_size_and_bm"
+description = "Daily Fama-French 25 portfolios sorted by Size and Book-to-Market"
+sources = [
+    "ken_french",
+]
+providers = [
+    "Ken French",
+]
+contact_required = [
+    "no",
+]
+pre_approved = [
+    "No",
+]
+provider_links = [
+    "https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html",
+]
+tags = [
+    "portfolios",
+    "equity",
+    "factors",
+]
+access_types = [
+    "Public",
+]
+license = "Public"
+restrictions = "No"
+pull_method = "Downloaded from Ken French Data Library"
+path = "./_data/ftsfr_french_portfolios_25_daily_size_and_bm.parquet"
 date_col = "ds"
-dataframe_docs_str = """
+docs = """
 ## Daily Fama-French 25 Portfolios (Size x Book-to-Market)
 
 This dataset contains daily returns for 25 portfolios formed on size and book-to-market.
@@ -102,7 +58,7 @@ This dataset contains daily returns for 25 portfolios formed on size and book-to
 
 | Column | Description |
 |--------|-------------|
-| unique_id | Portfolio identifier (e.g., "SMALL LoBM", "BIG HiBM") |
+| unique_id | Portfolio identifier (e.g., \"SMALL LoBM\", \"BIG HiBM\") |
 | ds | Date |
 | y | Daily return (decimal) |
 
@@ -113,24 +69,37 @@ Portfolios are formed on Size (market equity) and Book-to-Market (book equity / 
 """
 
 [dataframes.ftsfr_french_portfolios_25_daily_size_and_op]
-dataframe_name = "ftsfr_french_portfolios_25_daily_size_and_op"
-short_description_df = "Daily Fama-French 25 portfolios sorted by Size and Operating Profitability"
-data_sources = ["ken_french"]
-data_providers = ["Ken French"]
-need_to_contact_provider = ["no"]
-data_on_pre_approved_list = ["No"]
-links_to_data_providers = ["https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html"]
-topic_tags = ["portfolios", "equity", "factors"]
-type_of_data_access = ["Public"]
-data_license = "Public"
-license_expiration_date = ""
-provider_contact_info = ""
-restriction_on_use = "No"
-how_is_pulled = "Downloaded from Ken French Data Library"
-path_to_parquet_data = "./_data/ftsfr_french_portfolios_25_daily_size_and_op.parquet"
-path_to_excel_data = ""
+name = "ftsfr_french_portfolios_25_daily_size_and_op"
+description = "Daily Fama-French 25 portfolios sorted by Size and Operating Profitability"
+sources = [
+    "ken_french",
+]
+providers = [
+    "Ken French",
+]
+contact_required = [
+    "no",
+]
+pre_approved = [
+    "No",
+]
+provider_links = [
+    "https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html",
+]
+tags = [
+    "portfolios",
+    "equity",
+    "factors",
+]
+access_types = [
+    "Public",
+]
+license = "Public"
+restrictions = "No"
+pull_method = "Downloaded from Ken French Data Library"
+path = "./_data/ftsfr_french_portfolios_25_daily_size_and_op.parquet"
 date_col = "ds"
-dataframe_docs_str = """
+docs = """
 ## Daily Fama-French 25 Portfolios (Size x Operating Profitability)
 
 This dataset contains daily returns for 25 portfolios formed on size and operating profitability.
@@ -150,24 +119,37 @@ Portfolios are formed on Size (market equity) and Operating Profitability.
 """
 
 [dataframes.ftsfr_french_portfolios_25_daily_size_and_inv]
-dataframe_name = "ftsfr_french_portfolios_25_daily_size_and_inv"
-short_description_df = "Daily Fama-French 25 portfolios sorted by Size and Investment"
-data_sources = ["ken_french"]
-data_providers = ["Ken French"]
-need_to_contact_provider = ["no"]
-data_on_pre_approved_list = ["No"]
-links_to_data_providers = ["https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html"]
-topic_tags = ["portfolios", "equity", "factors"]
-type_of_data_access = ["Public"]
-data_license = "Public"
-license_expiration_date = ""
-provider_contact_info = ""
-restriction_on_use = "No"
-how_is_pulled = "Downloaded from Ken French Data Library"
-path_to_parquet_data = "./_data/ftsfr_french_portfolios_25_daily_size_and_inv.parquet"
-path_to_excel_data = ""
+name = "ftsfr_french_portfolios_25_daily_size_and_inv"
+description = "Daily Fama-French 25 portfolios sorted by Size and Investment"
+sources = [
+    "ken_french",
+]
+providers = [
+    "Ken French",
+]
+contact_required = [
+    "no",
+]
+pre_approved = [
+    "No",
+]
+provider_links = [
+    "https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html",
+]
+tags = [
+    "portfolios",
+    "equity",
+    "factors",
+]
+access_types = [
+    "Public",
+]
+license = "Public"
+restrictions = "No"
+pull_method = "Downloaded from Ken French Data Library"
+path = "./_data/ftsfr_french_portfolios_25_daily_size_and_inv.parquet"
 date_col = "ds"
-dataframe_docs_str = """
+docs = """
 ## Daily Fama-French 25 Portfolios (Size x Investment)
 
 This dataset contains daily returns for 25 portfolios formed on size and investment.
@@ -184,4 +166,62 @@ This dataset contains daily returns for 25 portfolios formed on size and investm
 
 Portfolios are formed on Size (market equity) and Investment (asset growth).
 5x5 = 25 portfolios at the intersection of 5 size quintiles and 5 investment quintiles.
+"""
+
+[charts.french_portfolios_replication]
+name = "Fama-French 25 Portfolios"
+description = "Daily returns for Fama-French 25 portfolios sorted by Size and Book-to-Market"
+dataframe = "ftsfr_french_portfolios_25_daily_size_and_bm"
+path = "./_output/french_portfolios_replication.html"
+tags = [
+    "portfolios",
+    "equity",
+    "factors",
+    "fama-french",
+    "replication",
+]
+publications = [
+    "Fama and French (1993) - Common risk factors in the returns on stocks and bonds",
+]
+docs = """
+## Fama-French 25 Portfolios
+
+Daily returns for 25 portfolios sorted by Size and Book-to-Market.
+
+### Portfolio Construction
+
+5x5 = 25 portfolios at intersection of size and B/M quintiles
+
+### Data Source
+
+Ken French Data Library
+"""
+
+[charts.french_portfolios_cumulative_returns]
+name = "Fama-French 25 Portfolios Cumulative Returns"
+description = "Cumulative returns showing growth of $1 invested in Fama-French portfolios"
+dataframe = "ftsfr_french_portfolios_25_daily_size_and_bm"
+path = "./_output/french_portfolios_cumulative_returns.html"
+tags = [
+    "portfolios",
+    "equity",
+    "factors",
+    "fama-french",
+    "cumulative returns",
+]
+publications = [
+    "Fama and French (1993) - Common risk factors in the returns on stocks and bonds",
+]
+docs = """
+## Fama-French 25 Portfolios Cumulative Returns
+
+Cumulative returns showing growth of $1 invested in Fama-French 25 portfolios sorted by Size and Book-to-Market.
+
+### Portfolio Construction
+
+5x5 = 25 portfolios at intersection of size and B/M quintiles
+
+### Calculation
+
+Cumulative return = Product of (1 + daily return) over time
 """
