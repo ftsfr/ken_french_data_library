@@ -168,7 +168,7 @@ def task_generate_charts():
 def task_generate_pipeline_site():
     return {
         "actions": [
-            "chartbook build -f",
+            "chartbook docs generate -f",
         ],
         "targets": ["docs/index.html"],
         "file_dep": [
